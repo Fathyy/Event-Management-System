@@ -25,6 +25,6 @@ define('WEB_ROOT', $web_root);
 define('SRV_ROOT', $srv_root);
 
 require_once 'database.php';
-require_once 'common.php';
+// require_once 'common.php';
 
 ?>

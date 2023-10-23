@@ -4,7 +4,7 @@ require_once 'config.php';
 $db_conn = mysqli_connect($host, $user, $pass, $dbName);
 
 // execute a database query
-function db_query(){
+function db_query($sql){
     global $db_conn;
     $result = mysqli_query($db_conn, $sql);
     return $result;
