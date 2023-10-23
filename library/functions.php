@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('database.php');
 
 // function to log in a user

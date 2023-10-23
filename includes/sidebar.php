@@ -20,6 +20,7 @@
         </li>
 
         <?php
+        if (isset($_SESSION['calender_fd_user'])) {
         $type = $_SESSION['calender_fd_user']['type'];
         if ($type == 'admin') {?>
             <li class="treview">
@@ -28,6 +29,7 @@
                 <span>Holidays</span>
             </a>
             </li>
+        <?php } ?>
         <?php } ?>
         
         

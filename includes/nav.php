@@ -6,7 +6,11 @@
     <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
             <a>
-                <span class="hidden-xs">Welcome, <?php echo strtoupper($_SESSION['calender_fd_user']['name'])?></span>
+                <span class="hidden-xs">Welcome, <?php 
+                if (isset($_SESSION['calender_fd_user'])) {
+                    echo strtoupper($_SESSION['calender_fd_user']['name']);
+                }
+                ?></span>
             </a>
         </li>
 
