@@ -21,23 +21,23 @@ $self = WEB_ROOT . 'index.php';
 
         <header class="main-header">
             <?php include 'nav.php'?>
-        
-        <!-- page content -->
-        <div class="content-wrapper">
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- include notifications page -->
-                        <?php include 'messages.php'?>
+            
+            <!-- page content -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- include notifications page -->
+                            <?php include 'messages.php'?>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <?php require_once $content?>
-                </div>
-            </section>
-        </div>
+                    <div class="row">
+                        <?php require_once $content?>
+                    </div>
+                </section>
+            </div>
         </header>
 
         <!-- footer -->
