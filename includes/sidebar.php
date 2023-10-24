@@ -1,37 +1,38 @@
-<section class="sidebar">
-    <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
-            <a href="<?php echo WEB_ROOT; ?>views/?v=DB">
-            <i class="fa-solid fa-calendar-days"></i>
-        <span>Events Calender</span></a>
-        </li>
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Event Management</h3>
+        </div>
 
-        <li class="treeview">
-            <a href="<?php echo WEB_ROOT; ?>views/?v=LIST">
-            <i class="fa-solid fa-newspaper"></i>
-        <span>Event Booking</span></a>
-        </li>
-
-        <li class="treeview">
-            <a href="<?php echo WEB_ROOT; ?>views/?v=USERS">
-            <i class="fa-solid fa-users"></i>
-        <span>User Details</span></a>
-        </li>
-
-        <?php
-        if (isset($_SESSION['calender_fd_user'])) {
-        $type = $_SESSION['calender_fd_user']['type'];
-        if ($type == 'admin') {?>
-            <li class="treview">
-                <a href="<?php echo WEB_ROOT; ?>views/?v=HOLY">
-                <i class="fa-solid fa-plane"></i>
-                <span>Holidays</span>
-            </a>
+        <ul class="list-unstyled components">
+            <p>Main Navigation</p>
+            <li class="active">
+                <a href="<?php echo WEB_ROOT; ?>views/?v=DB">
+                <span>Events Calender</span></a>
             </li>
-        <?php } ?>
-        <?php } ?>
-        
-        
-    </ul>
-</section>
+
+            <li>
+                <a href="<?php echo WEB_ROOT; ?>views/?v=LIST">
+                <span>Event Booking</span></a>
+            </li>
+            <li>
+                <a href="<?php echo WEB_ROOT; ?>views/?v=USERS">
+                <span>User Details</span></a>
+            </li>
+
+            <?php
+            if (isset($_SESSION['calender_fd_user'])) {
+            $type = $_SESSION['calender_fd_user']['type'];
+            if ($type == 'admin') {?>
+                <li>
+                    <a href="<?php echo WEB_ROOT; ?>views/?v=HOLY">
+                    <span>Holidays</span>
+                </a>
+                </li>
+            <?php } ?>
+            <?php } ?>
+        </ul>
+    </nav>
+
+</div>

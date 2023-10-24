@@ -2,7 +2,7 @@
 require_once '../library/config.php';
 require_once '../library/functions.php';
 
-// function from the functions.php to check whether a user si logged in or not
+// function from the functions.php to check whether a user is logged in or not
 checkFDUser();
 
 $view = (isset($_GET['v']) && $_GET['v'] != '') ? $_GET['v'] : '';

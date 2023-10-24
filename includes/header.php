@@ -8,3 +8,6 @@
 
 <!-- full calender js -->
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js">
+
+<!-- sidebar.css -->
+<link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/sidebar.css">
