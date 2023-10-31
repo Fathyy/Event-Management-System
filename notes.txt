@@ -48,3 +48,14 @@
     </nav>
 
 </div>
+
+
+jQuery UI 1.11.4
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Slimscroll -->
+<script src="<?php echo WEB_ROOT; ?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="<?php echo WEB_ROOT; ?>plugins/fastclick/fastclick.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>

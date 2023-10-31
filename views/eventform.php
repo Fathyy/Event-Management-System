@@ -16,15 +16,15 @@ require_once './library/functions.php';
             <input type="hidden" name="userId" id="userId">
             <span id="sprytf_name">
             <select name="name" class="form-control input-sm">
-                <?
+                <?php
                 $sql = "SELECT id, name FROM users";
                 $result = db_query($sql);
                 while ($row = fetch_assoc($result)) {
-                    extract($row);
+                    // extract($row);
                     ?>
-                    <option value="<?php echo $id?>"><?php echo $name?></option>
+                    <option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
                 
-                <? } ?>
+                <?php } ?>
                 </select>
                 <span class="selectRequiredMsg">Name is required.</span>
             </span>
