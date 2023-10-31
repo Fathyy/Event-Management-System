@@ -39,12 +39,10 @@ $self = WEB_ROOT . 'index.php';
                 </section>
             </div>
         </header>
-
-        <!-- footer -->
-        <footer class="main-footer">
-            <?php include 'footer.php'?>
-        </footer>
+  
     </div>
-    
+    <!-- footer -->
+    <?php include 'footer.php'?>
+
 </body>
 </html>

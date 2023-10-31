@@ -3,6 +3,15 @@ require_once './library/config.php';
 require_once './library/functions.php';
 ?>
 
+<link href="<?php echo WEB_ROOT; ?>library/spry/textfieldvalidation/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo WEB_ROOT; ?>library/spry/textfieldvalidation/SpryValidationTextField.js" type="text/javascript"></script>
+
+<link href="<?php echo WEB_ROOT; ?>library/spry/textareavalidation/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo WEB_ROOT; ?>library/spry/textareavalidation/SpryValidationTextarea.js" type="text/javascript"></script>
+
+<link href="<?php echo WEB_ROOT; ?>library/spry/selectvalidation/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo WEB_ROOT; ?>library/spry/selectvalidation/SpryValidationSelect.js" type="text/javascript"></script>
+
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title"><b>Book Event</b></h3>
@@ -96,7 +105,7 @@ require_once './library/functions.php';
 </div>
 
 <!-- Validation using spry library -->
-<script type="text/javascript">
+<script>
 <!--
 var sprytf_name 	= new Spry.Widget.ValidationSelect("sprytf_name");
 var sprytf_address 	= new Spry.Widget.ValidationTextarea("sprytf_address", {minChars:6, isRequired:true, validateOn:["blur", "change"]});
@@ -108,7 +117,7 @@ var sprytf_ucount 	= new Spry.Widget.ValidationTextField("sprytf_ucount", "integ
 //-->
 </script>
 
-<script type="text/javascript">
+<script>
 $('select').on('change', function() {
 	//alert( this.value );
 	var id = this.value;

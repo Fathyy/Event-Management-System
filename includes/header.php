@@ -9,6 +9,5 @@
 
 <!-- sidebar.css -->
 <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/sidebar.css">
-
-<!-- CSS for full calender -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.9/index.min.js"></script>
+<!-- Full calendar -->
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
