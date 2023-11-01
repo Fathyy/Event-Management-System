@@ -59,3 +59,11 @@ jQuery UI 1.11.4
 <script src="<?php echo WEB_ROOT; ?>plugins/fastclick/fastclick.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+
+<?php
+    if (isset($_SESSION['calender_fd_user'])) {
+    $type = $_SESSION['calender_fd_user']['type'];
+    if ($type == 'admin') {?>
+        
+    <?php } ?>
+    <?php } ?>

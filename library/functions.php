@@ -8,12 +8,15 @@ function doLogin(){
     $pwd = $_POST['pwd'];
 
     $errorMessage = '';
+
     $sql = "SELECT * FROM users WHERE name = '$name' AND pwd = '$pwd'";
     $result = db_query($sql);
     if (num_rows($result) == 1) {
         $row = fetch_assoc($result);
-        $_SESSION['calendar_fd_user'] = $row;
-        $_SESSION['calendar_fd_user_name'] = $row['username'];
+        $_SESSION['calendar_fd_user'] = array(
+            'name' => $row['name'],
+            'type' => $row['type']
+        );
         header("Location: index.php");
         exit();
     }
@@ -43,6 +46,22 @@ function doLogout(){
     }
     header('Location:index.php');
     exit;
+}
+
+// get the existing holidays
+$per_page = 10;
+$page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;
+$start = ($page - 1) * $per_page;
+$sql = "SELECT * FROM holidays ORDER BY id DESC LIMIT $start, $per_page";
+$result = db_query($sql);
+$records = array();
+while ($row = fetch_assoc($result)) {
+    $records[] = array(
+        'hid'=>$id,
+        'hdate'=>$date,
+        'hreason'=>$reason
+    );
+    return $records;
 }
 
 ?>

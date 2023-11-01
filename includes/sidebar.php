@@ -21,17 +21,11 @@
                 <span>User Details</span></a>
             </li>
 
-            <?php
-            if (isset($_SESSION['calender_fd_user'])) {
-            $type = $_SESSION['calender_fd_user']['type'];
-            if ($type == 'admin') {?>
-                <li>
-                    <a href="<?php echo WEB_ROOT; ?>views/?v=HOLY">
-                    <span>Holidays</span>
+            <li>
+                <a href="<?php echo WEB_ROOT; ?>views/?v=HOLY">
+                <span>Holidays</span>
                 </a>
-                </li>
-            <?php } ?>
-            <?php } ?>
+            </li>
         </ul>
     </nav>
 
