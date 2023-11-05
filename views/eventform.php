@@ -1,8 +1,3 @@
-<?php
-require_once './library/config.php';
-require_once './library/functions.php';
-?>
-
 <link href="<?php echo WEB_ROOT; ?>library/spry/textfieldvalidation/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo WEB_ROOT; ?>library/spry/textfieldvalidation/SpryValidationTextField.js" type="text/javascript"></script>
 

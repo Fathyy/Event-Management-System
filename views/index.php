@@ -39,4 +39,6 @@ switch ($view) {
         break;
 }
 
+require_once '../includes/template.php';
+
 ?>

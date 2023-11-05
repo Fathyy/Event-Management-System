@@ -8,7 +8,7 @@
 
 
 <!-- sidebar.css -->
-<link rel="stylesheet" href="<?php echo WEB_ROOT; ?>css/sidebar.css">
+
 
 
 <!-- fullCalendar 2.2.5-->
@@ -28,3 +28,14 @@
 <!-- fullCalendar 2.2.5 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 <script src="<?php echo WEB_ROOT; ?>plugins/fullcalendar/fullcalendar.min.js"></script>
+
+<!-- AdminLTE App -->
+<script src="<?php echo WEB_ROOT; ?>dist/js/app.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo WEB_ROOT; ?>dist/js/demo.js"></script>
+
+<!-- Theme style -->
+<link rel="stylesheet" href="<?php echo WEB_ROOT; ?>dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="<?php echo WEB_ROOT; ?>dist/css/skins/_all-skins.min.css">
