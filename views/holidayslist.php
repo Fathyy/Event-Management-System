@@ -19,23 +19,19 @@ $records = getHolidayRecords();
             <?php
             $idx = 1;
 foreach ($records as $rec) {
-    extract($rec);?>
+    $hid = $rec['hid'];
+    ?>
+
             
 
             <tr>
-                <td><?php echo $idx++; ?></td>
-                <td><?php echo $hdate; ?></td>
-                <td><?php echo $hreason; ?></td>
+                <td><?php echo $rec['hid']; ?></td>
+                <td><?php echo $rec['hdate']; ?></td>
+                <td><?php echo $rec['hreason']; ?></td>
                 <td><a href="javascript:deleteHoliday('<?php echo $hid?>')">Delete</a></td>
             </tr>
             <?php }?>
         </table>
-    </div>
-
-    <!-- footer -->
-    <div class="box-footer clearfix">
-        <?php echo generateholidayPagination();?>
-
     </div>
 </div>
 

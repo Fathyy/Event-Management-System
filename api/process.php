@@ -98,4 +98,61 @@ function bookCalender(){
     header('Location: ../index.php?msg=' . urlencode('User successfully registered.'));
 	exit();
 }
+
+function deleteHoliday(){
+    $holyId = $_GET['hId'];
+    $sql = "DELETE FROM holidays WHERE id = '$holyId'";
+    db_query($sql);
+    header('Location: ../views/?v=HOLY&msg=' . urlencode('Holiday record successfully deleted.'));
+    exit();
+}
+
+function calendarView(){
+    $start = $_POST['start'];
+    $end = $_POST['end'];
+
+    $bookings = array();
+
+    $sql = "SELECT u.name AS u_name, u.id AS user_id, r.rdate, r.status
+    FROM users u, reservations r WHERE u.id = r.uid
+    AND (r.rdate BETWEEN '$start' AND '$end')";
+    $reseult = db_query($sql);
+    while ($row = fetch_assoc($result)) {
+        $book_name = $row['name'];
+        $book_rdate = $row['rdate'];
+
+        $book = new Booking();
+        $book->title  = $book_name;
+        $book->start  = $book_rdate;
+        $bgClr = '#f39c12';//pending
+        if($status == 'DENIED') {$bgClr = '#ff0000';}
+        else if($status == 'APPROVED') {$bgClr = '#00cc00';}
+        $book->backgroundColor = $bgClr;
+        $book->url = WEB_ROOT . 'views/?v=USER&ID=' . $user_id;
+        $bookings[]  = $book;
+    }
+
+    // sql to get the booked days to be displayed on the calender
+    $ssql = "SELECT * FROM holidays WHERE 
+    (date BETWEEN '$start' AND '$end')";
+    $sresult = db_query($ssql);
+    while ($row = fetch_assoc($sresult)) {
+        $b = new Booking();
+        // assign row items variables
+        $id = $row['id'];
+        $date = $row['date'];
+        $reason = $row['reason'];
+
+        $b->block = true;
+        $b->title = $reason;
+        $b->start = $date;
+        $b->allDay = true;
+        $b->borderColor = '#F0F0F0';
+		$b->className = 'fc-disabled';
+        $bookings[] = $b;
+    }
+
+    json_encode($bookings);
+
+}
 ?>

@@ -50,13 +50,15 @@ function doLogout(){
 
 // get the existing holidays
 function getHolidayRecords(){
-    $per_page = 10;
-    $page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;
-    $start = ($page - 1) * $per_page;
-    $sql = "SELECT * FROM holidays ORDER BY id DESC LIMIT $start, $per_page";
+    // $page = (isset($_GET['page']) && $_GET['page'] != '') ? $_GET['page'] : 1;
+    $sql = "SELECT * FROM holidays";
     $result = db_query($sql);
     $records = array();
     while ($row = fetch_assoc($result)) {
+        $id = $row['id'];
+        $date = $row['date'];
+        $reason = $row['reason'];
+        
         $records[] = array(
             'hid'=>$id,
             'hdate'=>$date,
@@ -65,5 +67,7 @@ function getHolidayRecords(){
         return $records;
     }
 }
+
+
 
 ?>

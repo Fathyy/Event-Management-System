@@ -1,0 +1,36 @@
+<!-- footer -->
+    <div class="box-footer clearfix">
+        <?php echo generateholidayPagination();?>
+
+    </div>
+
+
+    function generateHolidayPagination(){
+    $per_page = 10;
+    $sql = "SELECT * FROM holidays";
+    $result = db_query($sql);
+    $count = num_rows($result);
+    $pages = ceil($count/$per_page);
+    $pageNo = '<ul class="pagination pagination-sm no-margin pull-right">';
+    for ($i=1; $i <= $pages; $i++) { 
+        $pageNo .= "<li><a href=\"?v=USER&page=$i\">".$i."</a></li>";
+    }
+    $pageNo .= "</ul>";
+    return $pageNo;
+}
+
+function generatePagination(){
+	$per_page = 10;
+	$sql 	= "SELECT * FROM tbl_users";
+	$result = dbQuery($sql);
+	$count 	= dbNumRows($result);
+	$pages 	= ceil($count/$per_page);
+	$pageno = '<ul class="pagination pagination-sm no-margin pull-right">';
+	for($i=1; $i<=$pages; $i++)	{
+	//<li><a href="#">1</a></li>
+		//$pageno .= "<a href=\"?v=USER&page=$i\"><li id=\".$i.\">".$i."</li></a> ";
+		$pageno .= "<li><a href=\"?v=USER&page=$i\">".$i."</a></li>";
+	}
+	$pageno .= 	"</ul>";
+	return $pageno;
+}
