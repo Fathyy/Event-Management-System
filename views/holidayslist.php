@@ -17,7 +17,6 @@ $records = getHolidayRecords();
             </tr>
 
             <?php
-            $idx = 1;
 foreach ($records as $rec) {
     $hid = $rec['hid'];
     ?>

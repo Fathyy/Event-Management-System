@@ -59,13 +59,37 @@ function getHolidayRecords(){
         $date = $row['date'];
         $reason = $row['reason'];
         
-        $records[] = array(
+        $records[]= array(
             'hid'=>$id,
             'hdate'=>$date,
             'hreason'=>$reason
         );
         return $records;
     }
+}
+
+// get existing users
+function getUserRecords(){
+    $type = $_SESSION['calendar_fd_user']['type'];
+    if ($type == 'student') {
+        $id = $_SESSION['calendar_fd_user']['id'];
+		$sql = "SELECT  * FROM users u WHERE type != 'admin' AND id = $id ORDER BY u.id DESC";
+        $result = db_query($sql);
+        $records = array();
+        while ($row = fetch_assoc($result)) {
+            extract($row);
+            $records[] = array("user_id" => $id,
+			"user_name" => $name,
+			"user_phone" => $phone,
+			"user_email" => $email,
+			"type" => $type,
+			"status" => $status,
+			"bdate" => $bdate
+		);	
+        }
+    }
+    return $records;
+
 }
 
 

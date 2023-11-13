@@ -84,8 +84,8 @@ function bookCalender(){
     }
 
     // otherwise allow the user to reserve that date
-    $sql = "INSERT INTO reservations (uid, ucount, status, comments, bdate)
-    VALUES('$userId', '$ucount', '$bkdate', 'PENDING', NOW())";
+    $sql = "INSERT INTO reservations (uid, ucount, rdate, status, comments, bdate)
+    VALUES('$userId', '$ucount', '$bkdate', 'PENDING', '', NOW())";
     db_query($sql);
 
     // send email to the user to take further action through their email
